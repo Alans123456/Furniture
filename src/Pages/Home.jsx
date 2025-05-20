@@ -18,6 +18,7 @@ import Table from "../assets/Gallery/Table.jpeg";
 import Categories from "../Component/Categories";
 import Trending from "../Component/Trending";
 import FlashSaleSection from "../Component/FlashSaleSection";
+import Review from "../Component/Review";
 
 export default function Home() {
   return (
@@ -165,6 +166,9 @@ export default function Home() {
       </div>
       <div>
         <FlashSaleSection />
+      </div>
+      <div>
+        <Review />
       </div>
     </>
   );

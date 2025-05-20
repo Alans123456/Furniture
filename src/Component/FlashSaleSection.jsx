@@ -4,7 +4,7 @@ export default function FlashSaleSection() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 mt-20 rounded-xl  max-w-6xl mx-auto">
       {/* Left - Flash Sale */}
-      <div className="bg-white rounded-xl p-6 md:col-span-2 shadow-md hover:shadow-lg hover:scale-[1.02] duration-300">
+      <div className="bg-white rounded-xl p-6 md:col-span-2 shadow-md border-gray-200 border-1 hover:shadow-lg hover:scale-[1.02] duration-300">
         <h2 className="text-2xl font-semibold mb-2">Flash Sale!</h2>
         <p className="text-gray-600 mb-4">
           Act fast to grab incredible deals on select furniture pieces in our
@@ -73,7 +73,7 @@ export default function FlashSaleSection() {
         ].map((item, i) => (
           <div
             key={i}
-            className="bg-white p-4 rounded-xl w-80 shadow-sm flex items-center justify-between hover:shadow-lg hover:scale-[1.02] duration-300"
+            className="bg-white p-4 rounded-xl w-80 shadow-sm flex items-center  border-gray-200 border-1 justify-between hover:shadow-lg hover:scale-[1.02] duration-300"
           >
             <div className="flex flex-col items-center gap-4">
               <img
