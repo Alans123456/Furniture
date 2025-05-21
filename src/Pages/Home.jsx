@@ -19,6 +19,11 @@ import Categories from "../Component/Categories";
 import Trending from "../Component/Trending";
 import FlashSaleSection from "../Component/FlashSaleSection";
 import Review from "../Component/Review";
+import FAQItem from "../Component/FAQItem";
+import PromoOffer from "../Component/PromoOffer";
+import Sblog from "../Component/Sblog";
+import Footer from "../Component/Footer";
+import Newsletter from "../Component/NewsLetter";
 
 export default function Home() {
   return (
@@ -26,7 +31,7 @@ export default function Home() {
       <div className="bg-primary">
         <SignUpBar />
         <NavBar />
-        <div className="flex justify-between px-16 py-10">
+        <div className="flex justify-between font-body px-16 py-10">
           <div className="flex flex-col text-white max-w-2xl space-y-6">
             <h1 className="text-5xl font-bold leading-tight">
               Welcome to <br /> Sajilo Mart :
@@ -108,8 +113,8 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-white p-6 mx-20  my-10 rounded-lg">
-        <div className="flex flex-col lg:flex-row gap-6 ml-40 mr-40">
+      <div className="bg-white p-6 mx-15  my-10 rounded-lg">
+        <div className="flex flex-col lg:flex-row gap-6 ml-35 mr-35">
           {/* Left Section */}
           <div className="flex flex-col gap-6 w-full lg:w-2/3">
             <ProductCard
@@ -121,7 +126,7 @@ export default function Home() {
                 "Glass table",
               ]}
               image="https://bernadettelivingston.com/10622-large_default/rustic-style-solid-wood-round-dining-table.jpg"
-              imgWidth="500px"
+              imgWidth="450px"
               imgHeight="340px"
             />
 
@@ -152,7 +157,7 @@ export default function Home() {
               title="Accent Chairs"
               items={["Arm chair", "Wing chair", "Cafe chair", "Wheels chair"]}
               image="https://i.pinimg.com/736x/79/a7/66/79a7668d0f446f06df049d09161c64b9.jpg"
-              imgWidth="550px"
+              imgWidth="600px"
               imgHeight="550px"
             />
           </div>
@@ -168,7 +173,22 @@ export default function Home() {
         <FlashSaleSection />
       </div>
       <div>
+        <PromoOffer />
+      </div>
+      <div>
         <Review />
+      </div>
+      <div className="mx-5 my-5">
+        <Sblog />
+      </div>
+      <div>
+        <FAQItem />
+      </div>
+      <div>
+        <Newsletter />
+      </div>
+      <div>
+        <Footer />
       </div>
     </>
   );

@@ -50,7 +50,7 @@ const Review = () => {
     <section className="px-4 md:px-12 py-10">
       <div className="flex justify-between items-center mb-6">
         <div>
-          <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-6">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold  text-gray-900 mb-6">
             Don't belive us? <br /> See what our customers say!
           </h2>
         </div>
@@ -75,7 +75,7 @@ const Review = () => {
         {/* Scrollable reviews */}
         <div
           ref={scrollRef}
-          className="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4"
+          className="flex gap-4 font-body overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4"
         >
           {reviews.map((review, index) => (
             <div

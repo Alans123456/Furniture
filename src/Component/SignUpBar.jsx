@@ -10,7 +10,7 @@ export default function SignUpBar() {
     <>
       <div className="flex justify-between  bg-secondary items-center p-4 text-amber-50 h-10">
         <div className="flex flex-grid items-center">
-          <p className="text-2xl">Follow us:</p>
+          <p className="text-2xl ">Follow us:</p>
           <a href="">
             {" "}
             <Instagram className="w-6 h-6 ml-2 mt-1" />
@@ -25,7 +25,7 @@ export default function SignUpBar() {
         </div>
         <div>
           <a href="">
-            <p className="text-2xl mr-12">
+            <p className="text-3xl font-body mr-12">
               Signup and get upto 20% of upto Rs.200
             </p>
           </a>

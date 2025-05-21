@@ -2,10 +2,10 @@ import { Clock, ArrowRight } from "lucide-react";
 
 export default function FlashSaleSection() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 mt-20 rounded-xl  max-w-6xl mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 mt-20 font-body text-2xl rounded-xl  max-w-7xl mx-auton ml-35">
       {/* Left - Flash Sale */}
       <div className="bg-white rounded-xl p-6 md:col-span-2 shadow-md border-gray-200 border-1 hover:shadow-lg hover:scale-[1.02] duration-300">
-        <h2 className="text-2xl font-semibold mb-2">Flash Sale!</h2>
+        <h2 className="text-2xl font-heading mb-2">Flash Sale!</h2>
         <p className="text-gray-600 mb-4">
           Act fast to grab incredible deals on select furniture pieces in our
           limited-time flash sale.
