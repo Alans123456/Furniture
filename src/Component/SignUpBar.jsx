@@ -25,7 +25,7 @@ export default function SignUpBar() {
         </div>
         <div>
           <a href="">
-            <p className="text-3xl font-body mr-12">
+            <p className="text-3xl font-body mr-8">
               Signup and get upto 20% of upto Rs.200
             </p>
           </a>

@@ -29,9 +29,12 @@ export default function Home() {
   return (
     <>
       <div className="bg-primary">
-        <SignUpBar />
-        <NavBar />
-        <div className="flex justify-between font-body px-16 py-10">
+        <div className="fixed top-0 left-0 right-0 font-heading z-50 mb-30">
+          <SignUpBar />
+          <NavBar />
+        </div>
+
+        <div className="flex justify-between font-body mt-20 px-16 py-10">
           <div className="flex flex-col text-white max-w-2xl space-y-6">
             <h1 className="text-5xl font-bold leading-tight">
               Welcome to <br /> Sajilo Mart :

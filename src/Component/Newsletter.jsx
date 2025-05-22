@@ -32,11 +32,13 @@ const Newsletter = ({
       </div>
 
       {/* Right Side */}
-      <div className="md:w-1/2 mt-6 md:mt-0 flex justify-center">
+      <div className=" mt-4 md:mt-0 flex justify-center">
         <img
-          src={imageUrl}
+          src={
+            "https://cdn.shopify.com/s/files/1/0817/7988/4088/articles/nuYul2RugizbKT3vdwYD9_57e36ae1-f8ed-4d50-a4e7-9af075018720.jpg?v=1719388669&originalWidth=1848&originalHeight=782&width=1800"
+          }
           alt="Newsletter Visual"
-          className="rounded-xl max-w-sm w-full object-cover"
+          className="rounded-xl  w-140 object-cover"
         />
       </div>
     </section>

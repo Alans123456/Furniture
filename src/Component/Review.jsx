@@ -5,31 +5,36 @@ const reviews = [
   {
     name: "Emily K.",
     location: "New York, NY",
-    image: "/images/client-1.jpg",
+    image:
+      "https://img.freepik.com/premium-photo/young-man-shirt-isolated-white-background_185193-74626.jpg",
     text: "I recently purchased a beautiful dining set from FurniFlex. The quality is top-notch and it looks even better in person.",
   },
   {
     name: "Sarah L.",
     location: "Los Angeles, CA",
-    image: "/images/client-2.jpg",
+    image:
+      "https://img.freepik.com/premium-photo/happy-man-makes-gesture-thumb-up-portrait-white-background_264197-37897.jpg?w=360",
     text: "Love the modern style of my new sofa. Delivery was quick and packaging was great.",
   },
   {
     name: "Michael B.",
     location: "Chicago, IL",
-    image: "/images/client-3.jpg",
+    image:
+      "https://img.freepik.com/premium-photo/smiling-young-asian-man-with-arms-crossed-white-background_264197-32414.jpg?w=360",
     text: "Great value for money. Support team answered all my queries patiently.",
   },
   {
     name: "Jessica M.",
     location: "Houston, TX",
-    image: "/images/client-4.jpg",
+    image:
+      "https://img.freepik.com/premium-photo/portrait-happy-young-asian-man-smiling-white-background_1339-154144.jpg",
     text: "The coffee table fits perfectly. Super sturdy and stylish.",
   },
   {
     name: "David R.",
     location: "Seattle, WA",
-    image: "/images/client-5.jpg",
+    image:
+      "https://img.freepik.com/premium-photo/cheerful-man-asian-hand-up-ok-happy-face-white-background_483229-1613.jpg",
     text: "Third order from FurniFlex — they never disappoint. Great products!",
   },
 ];
@@ -80,7 +85,7 @@ const Review = () => {
           {reviews.map((review, index) => (
             <div
               key={index}
-              className="snap-start shrink-0 min-w-[400px] max-w-[300px] bg-primary border border-gray-200 rounded-xl shadow hover:shadow-md transition-all duration-300"
+              className="snap-start shrink-0 min-w-[500px] max-w-[600px] h-50 bg-primary border border-gray-200 rounded-xl shadow hover:shadow-md transition-all duration-300"
             >
               <div className="grid grid-cols-3 h-full">
                 {/* Image (1/3) */}
@@ -93,7 +98,7 @@ const Review = () => {
                 </div>
 
                 {/* Text Content (2/3) */}
-                <div className="col-span-2 p-4 flex flex-col justify-between">
+                <div className="col-span-2 p-4 flex flex-col text-2xl justify-between">
                   <p className="text-sm text-white mb-2 leading-snug">
                     "{review.text}"
                   </p>
