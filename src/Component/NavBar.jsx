@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Lottie from "lottie-react";
 import iconAnimation from "../assets/icon.json";
-import HeartAnimation from "../assets/heart.json";
+
 import UserAnimation from "../assets/user.json";
+import heartData from "../assets/heart.json"; // correct if file is at src/assets/heart.json
 import { Search } from "lucide-react";
 
 export default function NavBar() {
@@ -115,11 +116,7 @@ export default function NavBar() {
 
       {/* Animations */}
       <div className="flex items-center ">
-        <Lottie
-          animationData={HeartAnimation}
-          loop={true}
-          className="w-20 h-20"
-        />
+        <Lottie animationData={heartData} loop={true} className="w-20 h-20" />
         <Lottie
           animationData={iconAnimation}
           loop={false}
