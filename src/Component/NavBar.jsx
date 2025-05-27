@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Lottie from "lottie-react";
 import iconAnimation from "../assets/icon.json";
-
 import UserAnimation from "../assets/user.json";
-import heartData from "../assets/heart.json"; // correct if file is at src/assets/heart.json
+import heartData from "../assets/heart.json";
 import { Search } from "lucide-react";
+import { LogIn } from "lucide-react";
 
 export default function NavBar() {
   const navItems = [
@@ -86,9 +86,9 @@ export default function NavBar() {
         ))}
       </ul>
 
-      {/* Right Side Icons + Search */}
+      {/* Search Box */}
       <div className="flex flex-col items-center relative w-64 ml-40">
-        <div className=" w-full">
+        <div className="w-full">
           <input
             type="text"
             placeholder="Search..."
@@ -114,21 +114,30 @@ export default function NavBar() {
         )}
       </div>
 
-      {/* Animations */}
-      <div className="flex items-center ">
-        <Lottie animationData={heartData} loop={true} className="w-20 h-20" />
-        <Lottie
-          animationData={iconAnimation}
-          loop={false}
-          className="w-10 h-10 mb-1 mr-4"
-        />
-        <a href="/login">
+      {/* Animations with NavLinks */}
+      <div className="flex items-center">
+        {/* Wishlist Icon */}
+        <NavLink to="/wishlist">
+          <Lottie animationData={heartData} loop={true} className="w-20 h-20" />
+        </NavLink>
+
+        {/* Cart Icon */}
+        <NavLink to="/cart">
+          <Lottie
+            animationData={iconAnimation}
+            loop={false}
+            className="w-10 h-10 mb-1 mr-4"
+          />
+        </NavLink>
+
+        {/* Profile/User Icon */}
+        <NavLink to="/login">
           <Lottie
             animationData={UserAnimation}
             loop={true}
             className="w-10 h-10 mb-1 mr-4"
           />
-        </a>
+        </NavLink>
       </div>
     </div>
   );

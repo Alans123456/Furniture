@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { product } from "../Component/Product";
-import { Heart } from "lucide-react";
+import { Heart, ShoppingCart } from "lucide-react";
 
 const Trending = () => {
   const [selectedCategory, setSelectedCategory] = useState("Living Room");
@@ -19,24 +19,25 @@ const Trending = () => {
   };
 
   return (
-    <div className="px-6 py-10 ml-5 mr-5">
-      <div className="flex flex-col md:flex-row justify-between items-center mb-8 ">
-        <h1 className="text-4xl md:text-5xl font-semibold leading-tight text-gray-800">
+    <div className="px-4 py-8">
+      <div className="flex flex-col md:flex-row justify-between items-center mx-4 md:mx-10">
+        <h1 className="text-4xl md:text-5xl font-heading mb-4 md:mb-0">
           Trending product <br /> for you:
         </h1>
-        <button className="bg-secondary text-white font-medium px-6 py-3 rounded-full mt-4 md:mt-0">
+        <button className="bg-secondary text-white font-bold px-6 py-3 rounded-full">
           View all products →
         </button>
       </div>
 
-      <div className="flex gap-3 flex-wrap mb-8">
+      {/* Category Filter Buttons */}
+      <div className="flex gap-4 flex-wrap mt-8 mb-6 px-4">
         {categories.map((cat) => (
           <button
             key={cat}
-            className={`px-5 py-2.5 rounded-full border shadow-sm text-sm font-medium transition-all duration-200 ${
+            className={`px-4 py-2 rounded-full border transition ${
               selectedCategory === cat
-                ? "bg-primary text-white"
-                : "bg-white text-gray-700 border-gray-300"
+                ? "bg-red-700 text-white"
+                : "bg-white text-gray-700"
             }`}
             onClick={() => setSelectedCategory(cat)}
           >
@@ -45,24 +46,30 @@ const Trending = () => {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      {/* Product Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 px-4">
         {filteredProducts.map((product) => (
           <div
             key={product.id}
-            className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-all p-4"
+            className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden"
           >
             <div className="relative">
+              {/* Product Image */}
               <img
                 src={product.image}
                 alt={product.name}
-                className="w-full h-56 object-contain rounded-xl bg-gray-50"
+                className="w-full h-48 object-cover"
               />
-              <span className="absolute top-2 left-2 bg-teal-700 text-white text-sm px-2 py-1 rounded-full">
+
+              {/* Discount Badge */}
+              <span className="absolute top-3 left-3 bg-teal-700 text-white text-xs px-2 py-1 rounded-full">
                 -{product.discount}%
               </span>
+
+              {/* Heart Button */}
               <button
                 onClick={() => toggleLike(product.id)}
-                className="absolute top-2 right-2 bg-white rounded-full p-1 shadow-sm hover:scale-110 transition"
+                className="absolute top-3 right-3 bg-white rounded-full p-1 hover:scale-110 transition"
               >
                 <Heart
                   size={20}
@@ -75,11 +82,14 @@ const Trending = () => {
               </button>
             </div>
 
-            <div className="mt-5 p-4 bg-teal-900 rounded-lg text-white text-center">
-              <h3 className="text-lg font-semibold mb-1">{product.name}</h3>
-              <p className="text-sm">${product.price.toFixed(2)}</p>
-              <button className="mt-3 bg-yellow-500 hover:bg-yellow-600 text-white font-semibold px-4 py-2 rounded-full transition">
-                Add to Cart 🛒
+            {/* Bottom Product Info Bar */}
+            <div className="bg-teal-900 text-white px-4 py-3 flex justify-between items-center">
+              <div>
+                <h3 className="text-sm font-semibold">{product.name}</h3>
+                <p className="text-sm">${product.price.toFixed(2)}</p>
+              </div>
+              <button className="bg-white rounded-full p-2 text-yellow-500 hover:bg-gray-100 transition">
+                <ShoppingCart size={18} />
               </button>
             </div>
           </div>
