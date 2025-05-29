@@ -10,6 +10,11 @@ import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Login from "./Pages/Login";
 import SignUp from "./Pages/Signup";
+import Products from "./Pages/Products";
+import ProductsDetails from "./Pages/ProductsDetails";
+import Categories from "./Pages/Categories";
+
+// import Categories from "./Pages/Categories";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -23,6 +28,10 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/SignUp" element={<SignUp />} />
+          <Route path="/Products" element={<Products />} />
+          <Route path="/products/:id" element={<ProductsDetails />} />
+          <Route path="/categories" element={<Categories />} />
+
           {/* <Route path="/products" element={<Products />} />
           <Route path="/categories" element={<Categories />} />
           <Route path="/about" element={<About />} />

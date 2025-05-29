@@ -5,12 +5,11 @@ import iconAnimation from "../assets/icon.json";
 import UserAnimation from "../assets/user.json";
 import heartData from "../assets/heart.json";
 import { Search } from "lucide-react";
-import { LogIn } from "lucide-react";
 
 export default function NavBar() {
   const navItems = [
     { name: "Home", path: "/" },
-    { name: "Products", path: "/products" },
+    { name: "Products", path: "/Products" },
     { name: "Categories", path: "/categories" },
     { name: "About Us", path: "/about" },
     { name: "Contact Us", path: "/contact" },
@@ -64,14 +63,14 @@ export default function NavBar() {
   };
 
   return (
-    <div className="flex justify-between items-center bg-primary border-white border-b-2 p-4 h-15 relative z-50">
+    <div className="flex justify-between items-center bg-primary border-white border-b-2 p-4 h-16 relative z-50">
       {/* Logo */}
       <div>
-        <img src="Logo.png" alt="Logo" className="h-12 w-45" />
+        <img src="Logo.png" alt="Logo" className="h-12 w-auto" />
       </div>
 
       {/* Navigation Links */}
-      <ul className="flex gap-6 text-white ml-105 w-155">
+      <ul className="flex gap-6 text-white ml-82">
         {navItems.map((item) => (
           <li key={item.name}>
             <NavLink
@@ -87,20 +86,18 @@ export default function NavBar() {
       </ul>
 
       {/* Search Box */}
-      <div className="flex flex-col items-center relative w-64 ml-40">
-        <div className="w-full">
-          <input
-            type="text"
-            placeholder="Search..."
-            value={searchTerm}
-            onChange={handleInputChange}
-            className="w-full border border-gray-300 rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#d4931d] focus:border-transparent"
-          />
-          <Search className="absolute right-3 top-2 text-white" />
-        </div>
+      <div className="relative w-64 ml-20">
+        <input
+          type="text"
+          placeholder="Search..."
+          value={searchTerm}
+          onChange={handleInputChange}
+          className="w-full border border-gray-300 rounded-full px-4 py-2 pr-10 text-black focus:outline-none focus:ring-2 focus:ring-[#d4931d] focus:border-transparent"
+        />
+        <Search className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none" />
 
         {filteredProducts.length > 0 && (
-          <ul className="absolute top-12 w-full bg-white border border-gray-200 rounded-lg shadow-lg z-50 max-h-60 overflow-auto">
+          <ul className="absolute top-full mt-1 w-full bg-white border border-gray-200 rounded-lg shadow-lg max-h-60 overflow-auto z-50">
             {filteredProducts.map((item, index) => (
               <li
                 key={index}
@@ -115,27 +112,24 @@ export default function NavBar() {
       </div>
 
       {/* Animations with NavLinks */}
-      <div className="flex items-center">
-        {/* Wishlist Icon */}
-        <NavLink to="/wishlist">
-          <Lottie animationData={heartData} loop={true} className="w-20 h-20" />
+      <div className="flex items-center gap-4 ml-6">
+        <NavLink to="/wishlist" aria-label="Wishlist">
+          <Lottie animationData={heartData} loop={true} className="w-15 h-15" />
         </NavLink>
 
-        {/* Cart Icon */}
-        <NavLink to="/cart">
+        <NavLink to="/cart" aria-label="Cart">
           <Lottie
             animationData={iconAnimation}
             loop={false}
-            className="w-10 h-10 mb-1 mr-4"
+            className="w-8 h-8"
           />
         </NavLink>
 
-        {/* Profile/User Icon */}
-        <NavLink to="/login">
+        <NavLink to="/login" aria-label="Login">
           <Lottie
             animationData={UserAnimation}
             loop={true}
-            className="w-10 h-10 mb-1 mr-4"
+            className="w-8 h-8"
           />
         </NavLink>
       </div>

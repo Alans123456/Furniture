@@ -1,21 +1,25 @@
 import React, { useState } from "react";
 import { product } from "../Component/Product";
-import { Heart, ShoppingCart } from "lucide-react";
+import ProductsCard from "../Component/ProductsCard";
+import { useNavigate } from "react-router-dom";
 
 const Trending = () => {
   const [selectedCategory, setSelectedCategory] = useState("Living Room");
-  const [likedProducts, setLikedProducts] = useState([]);
+  const navigate = useNavigate();
 
   const categories = [...new Set(product.map((p) => p.category))];
+  const top20Products = product.slice(0, 20);
 
-  const filteredProducts = product.filter(
+  const filteredProducts = top20Products.filter(
     (item) => item.category === selectedCategory
   );
 
-  const toggleLike = (id) => {
-    setLikedProducts((prev) =>
-      prev.includes(id) ? prev.filter((pid) => pid !== id) : [...prev, id]
-    );
+  const handleAddToCart = (id) => {
+    alert("Added to cart!");
+  };
+
+  const openProductDetail = (id) => {
+    navigate(`/products/${id}`);
   };
 
   return (
@@ -29,7 +33,7 @@ const Trending = () => {
         </button>
       </div>
 
-      {/* Category Filter Buttons */}
+      {/* Category Buttons */}
       <div className="flex gap-4 flex-wrap mt-8 mb-6 px-4">
         {categories.map((cat) => (
           <button
@@ -47,52 +51,14 @@ const Trending = () => {
       </div>
 
       {/* Product Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 px-4">
-        {filteredProducts.map((product) => (
-          <div
-            key={product.id}
-            className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden"
-          >
-            <div className="relative">
-              {/* Product Image */}
-              <img
-                src={product.image}
-                alt={product.name}
-                className="w-full h-48 object-cover"
-              />
-
-              {/* Discount Badge */}
-              <span className="absolute top-3 left-3 bg-teal-700 text-white text-xs px-2 py-1 rounded-full">
-                -{product.discount}%
-              </span>
-
-              {/* Heart Button */}
-              <button
-                onClick={() => toggleLike(product.id)}
-                className="absolute top-3 right-3 bg-white rounded-full p-1 hover:scale-110 transition"
-              >
-                <Heart
-                  size={20}
-                  className={`${
-                    likedProducts.includes(product.id)
-                      ? "text-red-600 fill-red-600"
-                      : "text-gray-400"
-                  }`}
-                />
-              </button>
-            </div>
-
-            {/* Bottom Product Info Bar */}
-            <div className="bg-teal-900 text-white px-4 py-3 flex justify-between items-center">
-              <div>
-                <h3 className="text-sm font-semibold">{product.name}</h3>
-                <p className="text-sm">${product.price.toFixed(2)}</p>
-              </div>
-              <button className="bg-white rounded-full p-2 text-yellow-500 hover:bg-gray-100 transition">
-                <ShoppingCart size={18} />
-              </button>
-            </div>
-          </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4">
+        {filteredProducts.map((item) => (
+          <ProductsCard
+            key={item.id}
+            product={item}
+            onAddToCart={() => handleAddToCart(item.id)}
+            onClick={() => openProductDetail(item.id)}
+          />
         ))}
       </div>
     </div>

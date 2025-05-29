@@ -33,7 +33,7 @@ const RoomGallery = () => {
             key={index}
             onClick={() => setSelectedRoom(room)}
             className={`relative h-120 rounded-xl cursor-pointer overflow-hidden transition-all duration-1000 hover:scale-105 text-body ${
-              isSelected ? "w-5/5" : "w-1/5"
+              isSelected ? "w-5/5" : "w-2/5"
             }`}
           >
             <img
