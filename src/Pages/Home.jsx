@@ -23,7 +23,7 @@ import FAQItem from "../Component/FAQItem";
 import PromoOffer from "../Component/PromoOffer";
 import Sblog from "../Component/Sblog";
 import Footer from "../Component/Footer";
-import Newsletter from "../Component/NewsLetter";
+import Newsletter from "../Component/Newsletter";
 
 export default function Home() {
   return (
