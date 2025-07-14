@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Lottie from "lottie-react";
 import iconAnimation from "../assets/icon.json";
-import UserAnimation from "../assets/user.json";
-import heartData from "../assets/heart.json";
+import UserAnimation from "../assets/User.json";
+import heartData from "../assets/Heart.json";
 import { Search } from "lucide-react";
 
 export default function NavBar() {
