@@ -19,7 +19,7 @@ const Footer = ({
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
           {/* Logo */}
           <div className="w-60 font-bold text-gray-900 flex items-center gap-2">
-            <img src="Logo.png" alt="" />
+            <img src="/Logo.png" alt="" />
           </div>
 
           {/* Footer Links */}

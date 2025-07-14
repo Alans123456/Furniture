@@ -66,7 +66,7 @@ export default function NavBar() {
     <div className="flex justify-between items-center bg-primary border-white border-b-2 p-4 h-16 relative z-50">
       {/* Logo */}
       <div>
-        <img src="Logo.png" alt="Logo" className="h-12 w-auto" />
+        <img src="/Logo.png" alt="Logo" className="h-12 w-auto" />
       </div>
 
       {/* Navigation Links */}

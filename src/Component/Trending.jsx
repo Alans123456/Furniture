@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { product } from "../Component/Product";
+import { product as Product } from "../Component/Product";
 import ProductsCard from "../Component/ProductsCard";
 import { useNavigate } from "react-router-dom";
 
@@ -7,8 +7,8 @@ const Trending = () => {
   const [selectedCategory, setSelectedCategory] = useState("Living Room");
   const navigate = useNavigate();
 
-  const categories = [...new Set(product.map((p) => p.category))];
-  const top20Products = product.slice(0, 20);
+  const categories = [...new Set(Product.map((p) => p.category))];
+  const top20Products = Product.slice(0, 20);
 
   const filteredProducts = top20Products.filter(
     (item) => item.category === selectedCategory
