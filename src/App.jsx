@@ -9,7 +9,7 @@ import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Login from "./Pages/Login";
-import SignUp from "./Pages/Signup";
+import SignUp from "./Pages/SignUp";
 import Products from "./Pages/Products";
 import ProductsDetails from "./Pages/ProductsDetails";
 import Categories from "./Pages/Categories";
