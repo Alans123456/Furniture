@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Lottie from "lottie-react";
-import iconAnimation from "../assets/Gallery/icon.json";
-import UserAnimation from "../assets/Gallery/User.json";
+import iconAnimation from "../assets/icon.json";
+import UserAnimation from "../assets/User.json";
 import heartData from "../assets/Heart.json";
 import { Search } from "lucide-react";
 
